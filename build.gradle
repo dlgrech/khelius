@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath libs.gradle.kotlin
+        classpath libs.kotlin.dokka
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+configure(subprojects) { project ->
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+
+    if (project.name != "khelius-cli") {
+        apply plugin: 'org.jetbrains.dokka'
+        apply from: "${rootProject.projectDir}/buildscripts/test_config.gradle"
+        apply from: "${rootProject.projectDir}/buildscripts/publishing.gradle"
+    }
+
+    apply from: "${rootProject.projectDir}/buildscripts/compile_versions.gradle"
+}
