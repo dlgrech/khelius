@@ -12,12 +12,12 @@ class BalanceSummaryFactoryTest {
   @Test
   fun create_withNoTokens_ReturnsExpectedResult() {
     val inputAccount = "abc123"
-    val input = BalanceSummaryResponseBody(
+    val inputResponse = BalanceSummaryResponseBody(
       nativeBalance = 123,
       tokens = null,
     )
 
-    val actualOutput = BalanceSummaryFactory.create(inputAccount, input)
+    val actualOutput = BalanceSummaryFactory.create(inputAccount, inputResponse)
 
     val expectedOutput = BalanceSummary(
       account = "abc123",
@@ -31,12 +31,12 @@ class BalanceSummaryFactoryTest {
   @Test
   fun create_withEmptyTokens_ReturnsExpectedResult() {
     val inputAccount = "abc123"
-    val input = BalanceSummaryResponseBody(
+    val inputResponse = BalanceSummaryResponseBody(
       nativeBalance = 123,
       tokens = emptyList()
     )
 
-    val actualOutput = BalanceSummaryFactory.create(inputAccount, input)
+    val actualOutput = BalanceSummaryFactory.create(inputAccount, inputResponse)
 
     val expectedOutput = BalanceSummary(
       account = "abc123",
@@ -48,9 +48,9 @@ class BalanceSummaryFactoryTest {
   }
 
   @Test
-  fun create_withTokens_ReturnsExpectedResult() {
+  fun create_withTokens_returnsExpectedResult() {
     val inputAccount = "abc123"
-    val input = BalanceSummaryResponseBody(
+    val inputResponse = BalanceSummaryResponseBody(
       nativeBalance = 123,
       tokens = listOf(
         TokenBalanceResponseBody(
@@ -62,7 +62,7 @@ class BalanceSummaryFactoryTest {
       ),
     )
 
-    val actualOutput = BalanceSummaryFactory.create(inputAccount, input)
+    val actualOutput = BalanceSummaryFactory.create(inputAccount, inputResponse)
 
     val expectedOutput = BalanceSummary(
       account = "abc123",

@@ -1,6 +1,7 @@
 package com.dgsd.khelius.cli.balance
 
 import com.dgsd.khelius.balance.BalanceApi
+import com.dgsd.khelius.cli.util.newOkHttpClient
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.requireObject
 import com.github.ajalt.clikt.core.subcommands
@@ -16,7 +17,7 @@ class BalanceCommand private constructor() : CliktCommand(
   private val apiKey by requireObject<String>()
 
   override fun run() {
-    currentContext.obj = BalanceApi(apiKey)
+    currentContext.obj = BalanceApi(apiKey, newOkHttpClient())
   }
 
   companion object {
