@@ -1,0 +1,16 @@
+
+dependencies {
+    api libs.kotlin.coroutines.coroutines
+    api libs.okhttp
+    api libs.moshi.moshi
+
+    kapt libs.moshi.codegen
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: '**/response/**')
+        }))
+    }
+}

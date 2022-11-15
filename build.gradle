@@ -25,6 +25,7 @@ configure(subprojects) { project ->
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
     if (project.name != "khelius-cli") {
+        apply plugin: 'kotlin-kapt'
         apply plugin: 'org.jetbrains.dokka'
         apply from: "${rootProject.projectDir}/buildscripts/test_config.gradle"
         apply from: "${rootProject.projectDir}/buildscripts/publishing.gradle"
