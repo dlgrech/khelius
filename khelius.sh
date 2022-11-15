@@ -1,0 +1,1 @@
+./gradlew --quiet ":khelius-cli:installDist" && khelius-cli/build/install/khelius-cli/bin/khelius-cli "$@"

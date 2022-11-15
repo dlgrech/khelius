@@ -1,0 +1,16 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = "com.dgsd.khelius.cli.MainKt"
+}
+
+dependencies {
+    implementation projects.kheliusBalance
+    implementation projects.kheliusCore
+    implementation projects.kheliusName
+    implementation projects.kheliusNft
+    implementation projects.kheliusTransactions
+    implementation libs.clikt
+}
