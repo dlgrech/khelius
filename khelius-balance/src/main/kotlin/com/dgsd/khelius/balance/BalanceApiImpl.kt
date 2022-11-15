@@ -10,7 +10,7 @@ private const val BALANCE_REQUEST_PATH_TEMPLATE = "/v0/addresses/%s/balances"
 /**
  * Default implementation of the [BalanceApi] interface
  */
-class BalanceApiImpl(
+internal class BalanceApiImpl(
   private val heliusApi: HeliusApi
 ) : BalanceApi {
 
