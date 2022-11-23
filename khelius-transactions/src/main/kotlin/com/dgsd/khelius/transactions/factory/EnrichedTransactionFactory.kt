@@ -19,7 +19,8 @@ internal object EnrichedTransactionFactory {
       timestamp = response.timestamp,
       slot = response.slot,
       nativeTransfers = response.nativeTransfers.orEmpty().map { NativeTransferFactory.create(it) },
-      tokenTransfers = response.tokenTransfers.orEmpty().map { TokenTransferFactory.create(it) }
+      tokenTransfers = response.tokenTransfers.orEmpty().map { TokenTransferFactory.create(it) },
+      accountData = response.accountData.orEmpty().map { AccountDataFactory.create(it) },
     )
   }
 }

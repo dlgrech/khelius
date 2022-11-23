@@ -18,6 +18,7 @@ data class EnrichedTransaction(
   val slot: Long,
   val nativeTransfers: List<NativeTransfer>,
   val tokenTransfers: List<TokenTransfer>,
+  val accountData: List<AccountData>,
 ) {
 
   data class NativeTransfer(
@@ -74,4 +75,19 @@ data class EnrichedTransaction(
      */
     val tokenStandard: TokenStandard?,
   )
+
+  data class AccountData(
+    val account: String,
+    val nativeBalanceChange: Long,
+    val tokenBalanceChanges: List<TokenBalanceChange>
+  ) {
+
+    data class TokenBalanceChange(
+      val userAccount: String,
+      val tokenAccount: String,
+      val tokenMint: String,
+      val tokenAmount: String,
+      val tokenDecimals: Int,
+    )
+  }
 }
