@@ -3,6 +3,7 @@ package com.dgsd.khelius.cli.util
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.ArgumentDelegate
 import com.github.ajalt.clikt.parameters.arguments.argument
+import com.github.ajalt.clikt.parameters.arguments.multiple
 import com.github.ajalt.clikt.parameters.arguments.transformAll
 
 fun CliktCommand.apiKeyArgument(): ArgumentDelegate<String> {
@@ -21,4 +22,11 @@ fun CliktCommand.accountArgument(): ArgumentDelegate<String> {
   ).transformAll {
     it.single()
   }
+}
+
+fun CliktCommand.transactionsArgument(): ArgumentDelegate<List<String>> {
+  return argument(
+    name = "TRANSACTION_SIGNATURES",
+    help = "List of transaction signatures"
+  ).multiple(required = true)
 }
