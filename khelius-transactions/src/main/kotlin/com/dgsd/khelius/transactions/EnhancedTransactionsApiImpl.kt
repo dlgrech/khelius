@@ -24,7 +24,7 @@ private const val QUERY_PARAM_TYPE = "type"
 /**
  * Default implementation of the [EnhancedTransactionsApi] interface
  */
-class EnhancedTransactionsApiImpl(
+internal class EnhancedTransactionsApiImpl(
   private val heliusApi: HeliusApi
 ) : EnhancedTransactionsApi {
 

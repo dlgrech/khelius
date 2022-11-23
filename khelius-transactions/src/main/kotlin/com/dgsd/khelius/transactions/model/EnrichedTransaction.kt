@@ -20,6 +20,7 @@ data class EnrichedTransaction(
   val tokenTransfers: List<TokenTransfer>,
   val accountData: List<AccountData>,
   val swapEventInfo: SwapEventInfo?,
+  val nftEventInfo: NftEventInfo?,
 ) {
 
   data class AccountData(

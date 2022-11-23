@@ -22,6 +22,7 @@ internal object EnrichedTransactionFactory {
       tokenTransfers = response.tokenTransfers.orEmpty().map(TokenTransferFactory::create),
       accountData = response.accountData.orEmpty().map(AccountDataFactory::create),
       swapEventInfo = response.events?.swap?.let(SwapEventFactory::create),
+      nftEventInfo = response.events?.nft?.let(NftEventFactory::create)
     )
   }
 }
