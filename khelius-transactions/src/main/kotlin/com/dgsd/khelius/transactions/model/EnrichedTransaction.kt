@@ -19,75 +19,12 @@ data class EnrichedTransaction(
   val nativeTransfers: List<NativeTransfer>,
   val tokenTransfers: List<TokenTransfer>,
   val accountData: List<AccountData>,
+  val swapEventInfo: SwapEventInfo?,
 ) {
-
-  data class NativeTransfer(
-
-    /**
-     * The user account the sol is sent from.
-     */
-    val fromUserAccount: String,
-
-    /**
-     * The user account the sol is sent to.
-     */
-    val toUserAccount: String,
-
-    /**
-     * The amount of sol sent (in lamports).
-     */
-    val amount: Long,
-  )
-
-  data class TokenTransfer(
-    /**
-     * The user account the sol is sent from.
-     */
-    val fromUserAccount: String?,
-
-    /**
-     * The user account the sol is sent to.
-     */
-    val toUserAccount: String,
-
-    /**
-     * The token account the tokens are sent from.
-     */
-    val fromTokenAccount: String?,
-
-    /**
-     * The token account the tokens are sent to.
-     */
-    val toTokenAccount: String,
-
-    /**
-     * The mint account of the token.
-     */
-    val mint: String,
-
-    /**
-     * The number of tokens sent.
-     */
-    val amount: Double,
-
-    /**
-     * The standard used for this token
-     */
-    val tokenStandard: TokenStandard?,
-  )
 
   data class AccountData(
     val account: String,
     val nativeBalanceChange: Long,
-    val tokenBalanceChanges: List<TokenBalanceChange>
-  ) {
-
-    data class TokenBalanceChange(
-      val userAccount: String,
-      val tokenAccount: String,
-      val tokenMint: String,
-      val tokenAmount: String,
-      val tokenDecimals: Int,
-    )
-  }
+    val tokenBalanceChanges: List<TokenAmount>
+  )
 }

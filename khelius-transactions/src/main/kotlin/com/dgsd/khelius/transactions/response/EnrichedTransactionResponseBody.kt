@@ -16,6 +16,7 @@ internal data class EnrichedTransactionResponseBody(
   @Json(name = "nativeTransfers") val nativeTransfers: List<NativeTransferResponseBody>?,
   @Json(name = "tokenTransfers") val tokenTransfers: List<TokenTransferResponseBody>?,
   @Json(name = "accountData") val accountData: List<AccountDataResponseBody>?,
+  @Json(name = "events") val events: EventResponseBody?,
 ) {
 
   @JsonClass(generateAdapter = true)
@@ -33,27 +34,53 @@ internal data class EnrichedTransactionResponseBody(
     @Json(name = "toTokenAccount") val toTokenAccount: String,
     @Json(name = "mint") val mint: String,
     @Json(name = "tokenAmount") val tokenAmount: Double,
-    @Json(name = "tokenStandard") @TokenStandardResponse val tokenStandard: String,
+    @Json(name = "tokenStandard") @TokenStandardResponse val tokenStandard: String?,
   )
 
   @JsonClass(generateAdapter = true)
   internal data class AccountDataResponseBody(
     @Json(name = "account") val account: String,
     @Json(name = "nativeBalanceChange") val nativeBalanceChange: Long,
-    @Json(name = "tokenBalanceChanges") val tokenBalanceChanges: List<TokenBalanceChangesResponseBody>?,
+    @Json(name = "tokenBalanceChanges") val tokenBalanceChanges: List<TokenAmountResponseBody>?,
+  )
+
+  @JsonClass(generateAdapter = true)
+  internal data class EventResponseBody(
+    @Json(name = "swap") val swap: SwapEventResponseBody?
   ) {
+
     @JsonClass(generateAdapter = true)
-    internal data class TokenBalanceChangesResponseBody(
-      @Json(name = "userAccount") val userAccount: String,
-      @Json(name = "tokenAccount") val tokenAccount: String,
-      @Json(name = "mint") val mint: String,
-      @Json(name = "rawTokenAmount") val rawTokenAmount: RawTokenAmountResponseBody,
+    internal data class SwapEventResponseBody(
+      @Json(name = "tokenInputs") val tokenInputs: List<TokenAmountResponseBody>?,
+      @Json(name = "tokenOutputs") val tokenOutputs: List<TokenAmountResponseBody>?,
+      @Json(name = "tokenFees") val tokenFees: List<TokenAmountResponseBody>?,
+      @Json(name = "nativeInput") val nativeInput: NativeAmountResponseBody,
+      @Json(name = "nativeOutput") val nativeOutput: NativeAmountResponseBody,
+      @Json(name = "nativeFees") val nativeFees: List<NativeAmountResponseBody>?,
+      @Json(name = "innerSwaps") val innerSwaps: List<InnerSwapResponseBody>?,
     ) {
+      @JsonClass(generateAdapter = true)
+      internal data class InnerSwapResponseBody(
+        @Json(name = "tokenInputs") val tokenInputs: List<TokenTransferResponseBody>?,
+        @Json(name = "tokenOutputs") val tokenOutputs: List<TokenTransferResponseBody>?,
+        @Json(name = "tokenFees") val tokenFees: List<TokenTransferResponseBody>?,
+        @Json(name = "nativeFees") val nativeFees: List<NativeTransferResponseBody>?,
+        @Json(name = "programInfo") val programInfo: ProgramInfoResponseBody?,
+      ) {
+
+        @JsonClass(generateAdapter = true)
+        internal data class ProgramInfoResponseBody(
+          @Json(name = "account") val account: String,
+          @Json(name = "source") val source: String,
+          @Json(name = "programName") val programName: String,
+          @Json(name = "instructionName") val instructionName: String?,
+        )
+      }
 
       @JsonClass(generateAdapter = true)
-      internal data class RawTokenAmountResponseBody(
-        @Json(name = "tokenAmount") val tokenAmount: String,
-        @Json(name = "decimals") val decimals: Int
+      internal data class NativeAmountResponseBody(
+        @Json(name = "account") val account: String,
+        @Json(name = "amount") val amount: String,
       )
     }
   }

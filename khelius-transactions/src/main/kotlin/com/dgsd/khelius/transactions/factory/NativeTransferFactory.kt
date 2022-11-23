@@ -1,6 +1,6 @@
 package com.dgsd.khelius.transactions.factory
 
-import com.dgsd.khelius.transactions.model.EnrichedTransaction
+import com.dgsd.khelius.transactions.model.NativeTransfer
 import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
 
 /**
@@ -10,8 +10,8 @@ internal object NativeTransferFactory {
 
   fun create(
     response: EnrichedTransactionResponseBody.NativeTransferResponseBody
-  ): EnrichedTransaction.NativeTransfer {
-    return EnrichedTransaction.NativeTransfer(
+  ): NativeTransfer {
+    return NativeTransfer(
       fromUserAccount = response.fromUserAccount,
       toUserAccount = response.toUserAccount,
       amount = response.amount

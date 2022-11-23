@@ -18,9 +18,10 @@ internal object EnrichedTransactionFactory {
       feePayer = response.feePayer,
       timestamp = response.timestamp,
       slot = response.slot,
-      nativeTransfers = response.nativeTransfers.orEmpty().map { NativeTransferFactory.create(it) },
-      tokenTransfers = response.tokenTransfers.orEmpty().map { TokenTransferFactory.create(it) },
-      accountData = response.accountData.orEmpty().map { AccountDataFactory.create(it) },
+      nativeTransfers = response.nativeTransfers.orEmpty().map(NativeTransferFactory::create),
+      tokenTransfers = response.tokenTransfers.orEmpty().map(TokenTransferFactory::create),
+      accountData = response.accountData.orEmpty().map(AccountDataFactory::create),
+      swapEventInfo = response.events?.swap?.let(SwapEventFactory::create),
     )
   }
 }

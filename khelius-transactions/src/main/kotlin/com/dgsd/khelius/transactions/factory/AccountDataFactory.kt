@@ -1,7 +1,9 @@
 package com.dgsd.khelius.transactions.factory
 
 import com.dgsd.khelius.transactions.model.EnrichedTransaction
+import com.dgsd.khelius.transactions.model.TokenAmount
 import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
+import com.dgsd.khelius.transactions.response.TokenAmountResponseBody
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library
@@ -17,9 +19,9 @@ internal object AccountDataFactory {
   }
 
   private fun create(
-    response: EnrichedTransactionResponseBody.AccountDataResponseBody.TokenBalanceChangesResponseBody
-  ): EnrichedTransaction.AccountData.TokenBalanceChange {
-    return EnrichedTransaction.AccountData.TokenBalanceChange(
+    response: TokenAmountResponseBody
+  ): TokenAmount {
+    return TokenAmount(
       userAccount = response.userAccount,
       tokenAccount = response.tokenAccount,
       tokenMint = response.mint,
