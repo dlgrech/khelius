@@ -1,0 +1,92 @@
+package com.dgsd.khelius.transactions.response
+
+/**
+ * The different types of transactions known to the Helius API
+ *
+ * @see <a href="https://app.swaggerhub.com/apis-docs/Helius/HeliusAPI/1.0.0#/TransactionType">Helius API Docs</a>
+ */
+@Target(
+  AnnotationTarget.TYPE_PARAMETER,
+  AnnotationTarget.VALUE_PARAMETER,
+  AnnotationTarget.FUNCTION
+)
+@Retention(AnnotationRetention.SOURCE)
+internal annotation class TransactionTypeResponse {
+  companion object {
+    const val UNKNOWN = "UNKNOWN"
+    const val NFT_BID = "NFT_BID"
+    const val NFT_BID_CANCELLED = "NFT_BID_CANCELLED"
+    const val NFT_LISTING = "NFT_LISTING"
+    const val NFT_CANCEL_LISTING = "NFT_CANCEL_LISTING"
+    const val NFT_SALE = "NFT_SALE"
+    const val NFT_MINT = "NFT_MINT"
+    const val NFT_AUCTION_CREATED = "NFT_AUCTION_CREATED"
+    const val NFT_AUCTION_UPDATED = "NFT_AUCTION_UPDATED"
+    const val NFT_AUCTION_CANCELLED = "NFT_AUCTION_CANCELLED"
+    const val NFT_PARTICIPATION_REWARD = "NFT_PARTICIPATION_REWARD"
+    const val NFT_MINT_REJECTED = "NFT_MINT_REJECTED"
+    const val CREATE_STORE = "CREATE_STORE"
+    const val WHITELIST_CREATOR = "WHITELIST_CREATOR"
+    const val ADD_TO_WHITELIST = "ADD_TO_WHITELIST"
+    const val REMOVE_FROM_WHITELIST = "REMOVE_FROM_WHITELIST"
+    const val AUCTION_MANAGER_CLAIM_BID = "AUCTION_MANAGER_CLAIM_BID"
+    const val EMPTY_PAYMENT_ACCOUNT = "EMPTY_PAYMENT_ACCOUNT"
+    const val UPDATE_PRIMARY_SALE_METADATA = "UPDATE_PRIMARY_SALE_METADATA"
+    const val ADD_TOKEN_TO_VAULT = "ADD_TOKEN_TO_VAULT"
+    const val ACTIVATE_VAULT = "ACTIVATE_VAULT"
+    const val INIT_VAULT = "INIT_VAULT"
+    const val INIT_BANK = "INIT_BANK"
+    const val INIT_STAKE = "INIT_STAKE"
+    const val MERGE_STAKE = "MERGE_STAKE"
+    const val SPLIT_STAKE = "SPLIT_STAKE"
+    const val SET_BANK_FLAGS = "SET_BANK_FLAGS"
+    const val SET_VAULT_LOCK = "SET_VAULT_LOCK"
+    const val UPDATE_VAULT_OWNER = "UPDATE_VAULT_OWNER"
+    const val UPDATE_BANK_MANAGER = "UPDATE_BANK_MANAGER"
+    const val RECORD_RARITY_POINTS = "RECORD_RARITY_POINTS"
+    const val ADD_RARITIES_TO_BANK = "ADD_RARITIES_TO_BANK"
+    const val INIT_FARM = "INIT_FARM"
+    const val INIT_FARMER = "INIT_FARMER"
+    const val REFRESH_FARMER = "REFRESH_FARMER"
+    const val UPDATE_FARM = "UPDATE_FARM"
+    const val AUTHORIZE_FUNDER = "AUTHORIZE_FUNDER"
+    const val DEAUTHORIZE_FUNDER = "DEAUTHORIZE_FUNDER"
+    const val FUND_REWARD = "FUND_REWARD"
+    const val CANCEL_REWARD = "CANCEL_REWARD"
+    const val LOCK_REWARD = "LOCK_REWARD"
+    const val PAYOUT = "PAYOUT"
+    const val VALIDATE_SAFETY_DEPOSIT_BOX_V2 = "VALIDATE_SAFETY_DEPOSIT_BOX_V2"
+    const val SET_AUTHORITY = "SET_AUTHORITY"
+    const val INIT_AUCTION_MANAGER_V2 = "INIT_AUCTION_MANAGER_V2"
+    const val UPDATE_EXTERNAL_PRICE_ACCOUNT = "UPDATE_EXTERNAL_PRICE_ACCOUNT"
+    const val AUCTION_HOUSE_CREATE = "AUCTION_HOUSE_CREATE"
+    const val CLOSE_ESCROW_ACCOUNT = "CLOSE_ESCROW_ACCOUNT"
+    const val WITHDRAW = "WITHDRAW"
+    const val DEPOSIT = "DEPOSIT"
+    const val TRANSFER = "TRANSFER"
+    const val BURN = "BURN"
+    const val BURN_NFT = "BURN_NFT"
+    const val PLATFORM_FEE = "PLATFORM_FEE"
+    const val LOAN = "LOAN"
+    const val REPAY_LOAN = "REPAY_LOAN"
+    const val ADD_TO_POOL = "ADD_TO_POOL"
+    const val REMOVE_FROM_POOL = "REMOVE_FROM_POOL"
+    const val CLOSE_POSITION = "CLOSE_POSITION"
+    const val UNLABELED = "UNLABELED"
+    const val CLOSE_ACCOUNT = "CLOSE_ACCOUNT"
+    const val WITHDRAW_GEM = "WITHDRAW_GEM"
+    const val DEPOSIT_GEM = "DEPOSIT_GEM"
+    const val STAKE_TOKEN = "STAKE_TOKEN"
+    const val UNSTAKE_TOKEN = "UNSTAKE_TOKEN"
+    const val STAKE_SOL = "STAKE_SOL"
+    const val UNSTAKE_SOL = "UNSTAKE_SOL"
+    const val CLAIM_REWARDS = "CLAIM_REWARDS"
+    const val BUY_SUBSCRIPTION = "BUY_SUBSCRIPTION"
+    const val SWAP = "SWAP"
+    const val INIT_SWAP = "INIT_SWAP"
+    const val CANCEL_SWAP = "CANCEL_SWAP"
+    const val REJECT_SWAP = "REJECT_SWAP"
+    const val INITIALIZE_ACCOUNT = "INITIALIZE_ACCOUNT"
+    const val TOKEN_MINT = "TOKEN_MINT"
+  }
+}
