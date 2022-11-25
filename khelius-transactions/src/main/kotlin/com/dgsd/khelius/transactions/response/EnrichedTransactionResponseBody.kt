@@ -1,5 +1,9 @@
 package com.dgsd.khelius.transactions.response
 
+import com.dgsd.khelius.common.response.NftEventResponseBody
+import com.dgsd.khelius.common.response.TokenStandardResponse
+import com.dgsd.khelius.common.response.TransactionSourceResponse
+import com.dgsd.khelius.common.response.TransactionTypeResponse
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

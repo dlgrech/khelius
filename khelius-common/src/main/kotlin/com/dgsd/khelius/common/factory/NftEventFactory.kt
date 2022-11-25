@@ -1,12 +1,12 @@
-package com.dgsd.khelius.transactions.factory
+package com.dgsd.khelius.common.factory
 
-import com.dgsd.khelius.transactions.model.NftEventInfo
-import com.dgsd.khelius.transactions.response.NftEventResponseBody
+import com.dgsd.khelius.common.model.NftEventInfo
+import com.dgsd.khelius.common.response.NftEventResponseBody
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library
  */
-internal object NftEventFactory {
+object NftEventFactory {
 
   fun create(
     response: NftEventResponseBody
@@ -25,7 +25,7 @@ internal object NftEventFactory {
       buyer = response.buyer?.ifBlank { null },
       seller = response.seller?.ifBlank { null },
       staker = response.staker?.ifBlank { null },
-      nfts = response.nfts.orEmpty().map(::create)
+      nfts = response.nfts.orEmpty().map(NftEventFactory::create)
     )
   }
 

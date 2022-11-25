@@ -3,6 +3,8 @@ rootProject.name = 'khelius'
 include ":khelius-cli"
 include ":khelius-core"
 include ":khelius-balance"
+include ":khelius-common"
+include ":khelius-common-models"
 include ":khelius-name"
 include ":khelius-nft"
 include ":khelius-transactions"

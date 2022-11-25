@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.response
+package com.dgsd.khelius.common.response
 
 /**
  * The different types of transactions known to the Helius API
@@ -11,7 +11,7 @@ package com.dgsd.khelius.transactions.response
   AnnotationTarget.FUNCTION
 )
 @Retention(AnnotationRetention.SOURCE)
-internal annotation class NftEventTypeResponse {
+annotation class NftEventTypeResponse {
   companion object {
     const val NFT_SALE = "NFT_SALE"
     const val NFT_LISTING = "NFT_LISTING"

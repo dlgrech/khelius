@@ -1,5 +1,6 @@
 package com.dgsd.khelius.transactions.factory
 
+import com.dgsd.khelius.common.factory.TokenStandardFactory
 import com.dgsd.khelius.transactions.model.TokenTransfer
 import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
 

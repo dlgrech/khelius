@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.model
+package com.dgsd.khelius.common.model
 
 /**
  * The different sources of transactions known to the Helius API

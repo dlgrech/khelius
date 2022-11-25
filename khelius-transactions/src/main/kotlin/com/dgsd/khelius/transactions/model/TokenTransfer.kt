@@ -1,5 +1,7 @@
 package com.dgsd.khelius.transactions.model
 
+import com.dgsd.khelius.common.model.TokenStandard
+
 data class TokenTransfer(
   /**
    * The user account the sol is sent from.

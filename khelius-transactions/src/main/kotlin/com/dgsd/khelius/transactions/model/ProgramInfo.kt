@@ -1,5 +1,7 @@
 package com.dgsd.khelius.transactions.model
 
+import com.dgsd.khelius.common.model.TransactionSource
+
 /**
  * @see <a href="https://app.swaggerhub.com/apis-docs/Helius/HeliusAPI/1.0.0#/ProgramInfo">Helius API Docs</a>
  */

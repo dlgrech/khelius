@@ -1,7 +1,7 @@
-package com.dgsd.khelius.transactions.factory
+package com.dgsd.khelius.common.factory
 
-import com.dgsd.khelius.transactions.model.SaleType
-import com.dgsd.khelius.transactions.response.SaleTypeResponse
+import com.dgsd.khelius.common.model.SaleType
+import com.dgsd.khelius.common.response.SaleTypeResponse
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library

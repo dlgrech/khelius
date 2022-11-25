@@ -1,6 +1,7 @@
-package com.dgsd.khelius.transactions.factory
+package com.dgsdg.khelius.common.factory
 
-import com.dgsd.khelius.transactions.model.TransactionSource
+import com.dgsd.khelius.common.factory.TransactionSourceFactory
+import com.dgsd.khelius.common.model.TransactionSource
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

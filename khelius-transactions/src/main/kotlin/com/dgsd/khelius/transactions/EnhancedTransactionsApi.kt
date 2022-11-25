@@ -1,10 +1,10 @@
 package com.dgsd.khelius.transactions
 
+import com.dgsd.khelius.common.model.TransactionSource
+import com.dgsd.khelius.common.model.TransactionType
 import com.dgsd.khelius.core.network.HeliusApi
 import com.dgsd.khelius.transactions.model.Commitment
 import com.dgsd.khelius.transactions.model.EnrichedTransaction
-import com.dgsd.khelius.transactions.model.TransactionSource
-import com.dgsd.khelius.transactions.model.TransactionType
 import okhttp3.OkHttpClient
 
 /**

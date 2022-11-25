@@ -2,8 +2,6 @@ package com.dgsd.khelius.cli.enhancedtransaction
 
 import com.dgsd.khelius.cli.util.accountArgument
 import com.dgsd.khelius.transactions.EnhancedTransactionsApi
-import com.dgsd.khelius.transactions.model.TransactionSource
-import com.dgsd.khelius.transactions.model.TransactionType
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.requireObject
 import kotlinx.coroutines.runBlocking

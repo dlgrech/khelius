@@ -1,5 +1,9 @@
 package com.dgsd.khelius.transactions.model
 
+import com.dgsd.khelius.common.model.NftEventInfo
+import com.dgsd.khelius.common.model.TransactionSource
+import com.dgsd.khelius.common.model.TransactionType
+
 /**
  * @see <a href="https://app.swaggerhub.com/apis-docs/Helius/HeliusAPI/1.0.0#/EnrichedTransaction">Helius API Docs</a>
  */

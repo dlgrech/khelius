@@ -1,5 +1,8 @@
 package com.dgsd.khelius.transactions.factory
 
+import com.dgsd.khelius.common.factory.NftEventFactory
+import com.dgsd.khelius.common.factory.TransactionSourceFactory
+import com.dgsd.khelius.common.factory.TransactionTypeFactory
 import com.dgsd.khelius.transactions.model.EnrichedTransaction
 import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
 

@@ -1,7 +1,7 @@
+
 dependencies {
     api projects.kheliusCommonModels
-    implementation projects.kheliusCore
-    implementation projects.kheliusCommon
+    api libs.moshi.moshi
     kapt libs.moshi.codegen
 
     testImplementation libs.junit

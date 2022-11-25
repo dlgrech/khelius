@@ -1,12 +1,12 @@
-package com.dgsd.khelius.transactions.factory
+package com.dgsd.khelius.common.factory
 
-import com.dgsd.khelius.transactions.model.TransactionType
-import com.dgsd.khelius.transactions.response.TransactionTypeResponse
+import com.dgsd.khelius.common.model.TransactionType
+import com.dgsd.khelius.common.response.TransactionTypeResponse
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library
  */
-internal object TransactionTypeFactory {
+object TransactionTypeFactory {
 
   @TransactionTypeResponse
   fun create(type: TransactionType): String {

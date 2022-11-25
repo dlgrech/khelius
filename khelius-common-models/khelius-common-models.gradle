@@ -1,0 +1,5 @@
+
+dependencies {
+    api libs.moshi.moshi
+    kapt libs.moshi.codegen
+}

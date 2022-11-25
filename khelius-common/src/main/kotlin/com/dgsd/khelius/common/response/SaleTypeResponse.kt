@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.response
+package com.dgsd.khelius.common.response
 
 /**
  * The different types of transactions known to the Helius API
@@ -11,11 +11,13 @@ package com.dgsd.khelius.transactions.response
   AnnotationTarget.FUNCTION
 )
 @Retention(AnnotationRetention.SOURCE)
-internal annotation class TokenStandardResponse {
+annotation class SaleTypeResponse {
   companion object {
-    const val NON_FUNGIBLE = "NonFungible"
-    const val FUNGIBLE = "Fungible"
-    const val FUNGIBLE_ASSET = "FungibleAsset"
-    const val NON_FUNGIBLE_EDITION = "NonFungibleEdition"
+    const val AUCTION = "AUCTION"
+    const val INSTANT_SALE = "INSTANT_SALE"
+    const val OFFER = "OFFER"
+    const val GLOBAL_OFFER = "GLOBAL_OFFER"
+    const val MINT = "MINT"
+    const val UNKNOWN = "UNKNOWN"
   }
 }

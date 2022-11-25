@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.response
+package com.dgsd.khelius.common.response
 
 /**
  * The different types of transactions known to the Helius API
@@ -11,7 +11,7 @@ package com.dgsd.khelius.transactions.response
   AnnotationTarget.FUNCTION
 )
 @Retention(AnnotationRetention.SOURCE)
-internal annotation class TransactionTypeResponse {
+annotation class TransactionTypeResponse {
   companion object {
     const val UNKNOWN = "UNKNOWN"
     const val NFT_BID = "NFT_BID"

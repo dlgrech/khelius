@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.response
+package com.dgsd.khelius.common.response
 
 /**
  * The different sources of transactions known to the Helius API

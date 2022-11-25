@@ -1,4 +1,4 @@
-package com.dgsd.khelius.transactions.model
+package com.dgsd.khelius.common.model
 
 /**
  * @see <a href="https://app.swaggerhub.com/apis-docs/Helius/HeliusAPI/1.0.0#/NFTEventType">Helius API Docs</a>

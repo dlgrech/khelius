@@ -1,10 +1,10 @@
-package com.dgsd.khelius.transactions.response
+package com.dgsd.khelius.common.response
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-internal data class NftEventResponseBody(
+data class NftEventResponseBody(
   @Json(name = "description") val description: String?,
   @Json(name = "type") @NftEventTypeResponse val type: String,
   @Json(name = "source") @TransactionSourceResponse val source: String,
@@ -22,7 +22,7 @@ internal data class NftEventResponseBody(
 ) {
 
   @JsonClass(generateAdapter = true)
-  internal data class NftTokenResponseBody(
+  data class NftTokenResponseBody(
     @Json(name = "mint") val mint: String,
     @Json(name = "tokenStandard") @TokenStandardResponse val tokenStandard: String,
   )

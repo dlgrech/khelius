@@ -1,7 +1,7 @@
-package com.dgsd.khelius.transactions.factory
+package com.dgsd.khelius.common.factory
 
-import com.dgsd.khelius.transactions.model.NftEventType
-import com.dgsd.khelius.transactions.response.NftEventTypeResponse
+import com.dgsd.khelius.common.model.NftEventType
+import com.dgsd.khelius.common.response.NftEventTypeResponse
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library
