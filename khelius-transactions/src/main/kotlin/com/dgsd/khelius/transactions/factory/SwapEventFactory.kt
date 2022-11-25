@@ -2,7 +2,7 @@ package com.dgsd.khelius.transactions.factory
 
 import com.dgsd.khelius.transactions.model.ProgramInfo
 import com.dgsd.khelius.transactions.model.SwapEventInfo
-import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody.EventResponseBody.SwapEventResponseBody
+import com.dgsd.khelius.transactions.response.SwapEventResponseBody
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library

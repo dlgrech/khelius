@@ -1,7 +1,7 @@
 package com.dgsd.khelius.transactions.factory
 
 import com.dgsd.khelius.transactions.model.NftEventInfo
-import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
+import com.dgsd.khelius.transactions.response.NftEventResponseBody
 
 /**
  * Maps a raw json response object into a higher-level model object exposed by the library
@@ -9,7 +9,7 @@ import com.dgsd.khelius.transactions.response.EnrichedTransactionResponseBody
 internal object NftEventFactory {
 
   fun create(
-    response: EnrichedTransactionResponseBody.EventResponseBody.NftEventResponseBody
+    response: NftEventResponseBody
   ): NftEventInfo {
     return NftEventInfo(
       description = response.description?.ifBlank { null },
@@ -30,7 +30,7 @@ internal object NftEventFactory {
   }
 
   private fun create(
-    response: EnrichedTransactionResponseBody.EventResponseBody.NftEventResponseBody.NftTokenResponseBody
+    response: NftEventResponseBody.NftTokenResponseBody
   ): NftEventInfo.Token {
     return NftEventInfo.Token(
       mint = response.mint,
