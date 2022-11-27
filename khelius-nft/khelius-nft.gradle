@@ -1,0 +1,16 @@
+dependencies {
+    api projects.kheliusCommonModels
+    implementation projects.kheliusCore
+    implementation projects.kheliusCommon
+    kapt libs.moshi.codegen
+
+    testImplementation libs.junit
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: '**/response/**')
+        }))
+    }
+}
