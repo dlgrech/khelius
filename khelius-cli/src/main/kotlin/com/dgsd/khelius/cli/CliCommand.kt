@@ -3,6 +3,7 @@ package com.dgsd.khelius.cli
 import com.dgsd.khelius.cli.balance.BalanceCommand
 import com.dgsd.khelius.cli.enhancedtransaction.EnhancedTransactionCommand
 import com.dgsd.khelius.cli.name.NameCommand
+import com.dgsd.khelius.cli.nft.NftCommand
 import com.dgsd.khelius.cli.util.apiKeyArgument
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.subcommands
@@ -28,6 +29,7 @@ class CliCommand private constructor(): CliktCommand(
         BalanceCommand.create(),
         EnhancedTransactionCommand.create(),
         NameCommand.create(),
+        NftCommand.create(),
       )
     }
   }
