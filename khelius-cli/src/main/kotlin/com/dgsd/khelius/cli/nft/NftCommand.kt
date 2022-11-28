@@ -25,6 +25,7 @@ class NftCommand private constructor() : CliktCommand(
     fun create(): NftCommand {
       return NftCommand().subcommands(
         GetNftEventsCommand(),
+        GetNftsCommand(),
       )
     }
   }
