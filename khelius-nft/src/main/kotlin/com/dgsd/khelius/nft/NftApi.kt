@@ -3,6 +3,7 @@ package com.dgsd.khelius.nft
 import com.dgsd.khelius.common.model.NftEventInfo
 import com.dgsd.khelius.core.network.HeliusApi
 import com.dgsd.khelius.nft.model.NftListSummary
+import com.dgsd.khelius.nft.model.NftMetadata
 import okhttp3.OkHttpClient
 
 /**
@@ -32,4 +33,9 @@ interface NftApi {
    * Returns all the NFTs that the given address currently holds.
    */
   suspend fun getNfts(account: String, pageNumber: Int? = null): NftListSummary
+
+  /**
+   * Returns metadata for a list of given NFT mint addresses.
+   */
+  suspend fun getNftMetadata(nftAddresses: List<String>): List<NftMetadata>
 }
