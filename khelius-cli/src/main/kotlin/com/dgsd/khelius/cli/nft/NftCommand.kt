@@ -26,6 +26,7 @@ class NftCommand private constructor() : CliktCommand(
       return NftCommand().subcommands(
         GetNftEventsCommand(),
         GetNftsCommand(),
+        GetNftMetadataCommand(),
       )
     }
   }

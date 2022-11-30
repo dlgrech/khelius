@@ -24,6 +24,13 @@ fun CliktCommand.accountArgument(): ArgumentDelegate<String> {
   }
 }
 
+fun CliktCommand.nftsArgument(): ArgumentDelegate<List<String>> {
+  return argument(
+    name = "NFTS",
+    help = "List of NFTs Base58 hashes"
+  ).multiple(required = true)
+}
+
 fun CliktCommand.transactionsArgument(): ArgumentDelegate<List<String>> {
   return argument(
     name = "TRANSACTION_SIGNATURES",
