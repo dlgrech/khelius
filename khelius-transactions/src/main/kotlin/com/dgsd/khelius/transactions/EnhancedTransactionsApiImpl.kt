@@ -52,7 +52,7 @@ internal class EnhancedTransactionsApiImpl(
       queryParams
     )
 
-    return response.map { EnrichedTransactionFactory.create(it) }
+    return response.map(EnrichedTransactionFactory::create)
   }
 
   override suspend fun parseTransactions(
@@ -66,6 +66,6 @@ internal class EnhancedTransactionsApiImpl(
       queryParams = mapOf(QUERY_PARAM_COMMITMENT to CommitmentFactory.create(commitment))
     )
 
-    return response.map { EnrichedTransactionFactory.create(it) }
+    return response.map(EnrichedTransactionFactory::create)
   }
 }
