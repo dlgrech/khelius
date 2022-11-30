@@ -2,6 +2,7 @@ package com.dgsd.khelius.nft.factory
 
 import com.dgsd.khelius.nft.model.Nft
 import com.dgsd.khelius.nft.model.NftListSummary
+import com.dgsd.khelius.nft.model.NftTrait
 import com.dgsd.khelius.nft.response.GetNftsResponseBody
 import com.dgsd.khelius.nft.response.NftResponseBody
 
@@ -30,8 +31,8 @@ internal object NftFactory {
     )
   }
 
-  private fun create(response: NftResponseBody.Trait): Nft.Trait {
-    return Nft.Trait(
+  private fun create(response: NftResponseBody.Trait): NftTrait {
+    return NftTrait(
       displayType = response.displayType,
       traitType = response.traitType,
       value = response.value
