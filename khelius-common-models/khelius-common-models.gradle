@@ -1,3 +1,7 @@
+publish_library(
+        'khelius-common-models',
+        'Provides common models used by the Khelius family of libraries'
+)
 
 dependencies {
     api libs.moshi.moshi

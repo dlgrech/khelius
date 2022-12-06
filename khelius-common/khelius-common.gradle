@@ -1,3 +1,7 @@
+publish_library(
+        'khelius-common',
+        'Provides common models for internal use of the Khelius family of libraries'
+)
 
 dependencies {
     api projects.kheliusCommonModels

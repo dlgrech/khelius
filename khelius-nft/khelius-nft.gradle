@@ -1,3 +1,8 @@
+publish_library(
+        'khelius-nft',
+        'Kotlin wrapper for the Helius NFT API'
+)
+
 dependencies {
     api projects.kheliusCommonModels
     implementation projects.kheliusCore

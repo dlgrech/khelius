@@ -1,3 +1,8 @@
+publish_library(
+        'khelius-name',
+        'Kotlin wrapper for the Helius Name API'
+)
+
 dependencies {
     implementation projects.kheliusCore
     kapt libs.moshi.codegen

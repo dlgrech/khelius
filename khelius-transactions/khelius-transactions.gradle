@@ -1,3 +1,8 @@
+publish_library(
+        'khelius-transactions',
+        'Kotlin wrapper for the Helius Enhanced Transactions API'
+)
+
 dependencies {
     api projects.kheliusCommonModels
     implementation projects.kheliusCore
