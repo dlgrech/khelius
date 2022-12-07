@@ -8,9 +8,9 @@ It's intended to be used in any Kotlin JVM environment (such as on Android)
 
 The repo contains a `khelius-cli` module which exposes functionality of the library for use as a CLI.
 
-There is a top-level script - [`khelius.sh`](https://github.com/dlgrech/kheliyus/tree/main/khelius.sh) - which can be used to run various commands.
+There is a top-level script - [`khelius.sh`](https://github.com/dlgrech/khelius/tree/main/khelius.sh) - which can be used to run various commands.
 
-See the [`khelius-cli`](https://github.com/dlgrech/kheliyus/tree/main/khelius.sh) module for more info/examples.
+See the [`khelius-cli`](https://github.com/dlgrech/khelius/tree/main/khelius-cli) module for more info/examples.
 
 ### Quickstart
 
@@ -19,6 +19,7 @@ See the [`khelius-cli`](https://github.com/dlgrech/kheliyus/tree/main/khelius.sh
 ```kotlin
 val balanceApi = BalanceApi("HELIUS_API_KEY")
 val balanceSummary = balanceApi.getBalanceSummary("ACCOUNT_HASH")
+
 println(balanceSummary.nativeBalance)
 ```
 
@@ -27,6 +28,7 @@ println(balanceSummary.nativeBalance)
 ```kotlin
 val nameApi = NameApi("HELIUS_API_KEY")
 val namesSummary = nameApi.getNames("ACCOUNT_HASH")
+
 println(namesSummary.names)
 ```
 
@@ -35,6 +37,7 @@ println(namesSummary.names)
 ```kotlin
 val nftApi = NftApi("HELIUS_API_KEY")
 val nftSummary = nftApi.getNfts("ACCOUNT_HASH")
+
 println(nftSummary.nfts)
 ```
 
@@ -43,6 +46,7 @@ println(nftSummary.nfts)
 ```kotlin
 val transactionsApi = EnhancedTransactionsApi("HELIUS_API_KEY")
 val transactions = transactionsApi.getTransactionHistory("ACCOUNT_HASH")
+
 for (transaction in transactions) {
   println(transaction.signature)
 }
@@ -58,3 +62,5 @@ implementation "io.github.dlgrech:khelius-name:<LATEST-VERSION>"
 implementation "io.github.dlgrech:khelius-nft:<LATEST-VERSION>"
 implementation "io.github.dlgrech:khelius-transactions:<LATEST-VERSION>"
 ```
+
+The latest version can be grabbed by [looking on maven central](https://search.maven.org/search?q=io.github.dlgrech)
