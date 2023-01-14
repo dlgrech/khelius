@@ -8,8 +8,8 @@ internal data class SwapEventResponseBody(
   @Json(name = "tokenInputs") val tokenInputs: List<TokenAmountResponseBody>?,
   @Json(name = "tokenOutputs") val tokenOutputs: List<TokenAmountResponseBody>?,
   @Json(name = "tokenFees") val tokenFees: List<TokenAmountResponseBody>?,
-  @Json(name = "nativeInput") val nativeInput: NativeAmountResponseBody,
-  @Json(name = "nativeOutput") val nativeOutput: NativeAmountResponseBody,
+  @Json(name = "nativeInput") val nativeInput: NativeAmountResponseBody?,
+  @Json(name = "nativeOutput") val nativeOutput: NativeAmountResponseBody?,
   @Json(name = "nativeFees") val nativeFees: List<NativeAmountResponseBody>?,
   @Json(name = "innerSwaps") val innerSwaps: List<InnerSwapResponseBody>?,
 ) {

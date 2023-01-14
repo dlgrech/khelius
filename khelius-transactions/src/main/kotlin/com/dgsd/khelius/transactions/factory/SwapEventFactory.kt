@@ -18,19 +18,23 @@ internal object SwapEventFactory {
       tokenOutputs = response.tokenInputs.orEmpty().map(TokenAmountFactory::create),
       tokenFees = response.tokenInputs.orEmpty().map(TokenAmountFactory::create),
       nativeInput = create(response.nativeInput),
-      nativeOutput = create(response.nativeInput),
-      nativeFees = response.nativeFees.orEmpty().map(::create),
+      nativeOutput = create(response.nativeOutput),
+      nativeFees = response.nativeFees.orEmpty().mapNotNull(::create),
       innerSwaps = response.innerSwaps.orEmpty().map(::create),
     )
   }
 
   private fun create(
-    response: SwapEventResponseBody.NativeAmountResponseBody
-  ): SwapEventInfo.NativeAmount {
-    return SwapEventInfo.NativeAmount(
-      response.account,
-      response.amount
-    )
+    response: SwapEventResponseBody.NativeAmountResponseBody?
+  ): SwapEventInfo.NativeAmount? {
+    return if (response == null) {
+      null
+    } else {
+      SwapEventInfo.NativeAmount(
+        response.account,
+        response.amount
+      )
+    }
   }
 
   private fun create(

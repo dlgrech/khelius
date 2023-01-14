@@ -7,8 +7,8 @@ data class SwapEventInfo(
   val tokenInputs: List<TokenAmount>,
   val tokenOutputs: List<TokenAmount>,
   val tokenFees: List<TokenAmount>,
-  val nativeInput: NativeAmount,
-  val nativeOutput: NativeAmount,
+  val nativeInput: NativeAmount?,
+  val nativeOutput: NativeAmount?,
   val nativeFees: List<NativeAmount>,
   val innerSwaps: List<InnerSwap>,
 ) {
